@@ -78,7 +78,7 @@ Reference boat is the **ILCA 7 (Laser)**: LWL 3.96 m, displacement 130 kg, sail 
 
 ## Roadmap
 
-See [ROADMAP.md](./ROADMAP.md) for completed phases and planned work.
+See [ROADMAP.md](./ROADMAP.md) for completed phases and planned work, and [TASKS.md](./TASKS.md) for a granular checklist of what's done and what's left.
 
 ## License
 
