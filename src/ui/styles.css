@@ -1,0 +1,153 @@
+#hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  font-family: 'Courier New', monospace;
+  color: #e0e0e0;
+}
+
+.hud-panel {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 10px 14px;
+  backdrop-filter: blur(4px);
+}
+
+.hud-top-left {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.hud-top-right {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.hud-bottom-center {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.hud-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.hud-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.hud-value-small {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.hud-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.hud-item {
+  min-width: 80px;
+}
+
+.wind-indicator {
+  width: 120px;
+  height: 120px;
+}
+
+.controls-hint {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Minimap */
+.minimap-panel {
+  position: absolute;
+  bottom: 60px;
+  right: 16px;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.minimap-canvas {
+  display: block;
+}
+
+/* Race HUD */
+.race-hud {
+  pointer-events: none;
+}
+
+.race-countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 96px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255,255,255,0.5), 0 4px 20px rgba(0,0,0,0.8);
+  transition: transform 0.2s ease-out, color 0.2s;
+}
+
+.race-countdown-go {
+  color: #44ff44;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.race-timer {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  padding: 6px 18px !important;
+  letter-spacing: 1px;
+}
+
+.race-leg-info {
+  position: absolute;
+  right: 16px;
+  top: 210px;
+  padding: 10px 14px !important;
+  min-width: 130px;
+}
+
+.race-start-prompt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.race-finish-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+}
