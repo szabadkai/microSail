@@ -47,8 +47,8 @@ export function createSailGeometry(): SailMesh {
       const b = a + 1;
       const c = (j + 1) * (SEGMENTS_U + 1) + i;
       const d = c + 1;
-      indices.push(a, c, b);
-      indices.push(b, c, d);
+      indices.push(a, b, c);
+      indices.push(b, d, c);
     }
   }
 
@@ -67,7 +67,7 @@ export function createSailGeometry(): SailMesh {
   });
 
   const mesh = new THREE.Mesh(geometry, material);
-  // Sail tack at boom pivot; foot extends along +Z (same direction as boom)
+  // Sail tack at boom pivot; foot extends along -Z (aft, same direction as boom)
   mesh.position.set(0, 0, 0);
 
   // Store a copy of base positions for deformation reference
@@ -99,8 +99,9 @@ export function deformSail(
   const aoaNorm = Math.min(Math.abs(angleOfAttack) / (Math.PI * 0.5), 1.0);
   const draftPosition = 0.3 + 0.2 * aoaNorm; // 30-50% of chord
 
-  // Wind direction sign: sail bellows to leeward
-  const windSign = angleOfAttack >= 0 ? 1.0 : -1.0;
+  // Camber always bulges in +X (leeward in boom-local space).
+  // The boom group rotation handles which side of the boat is leeward.
+  const windSign = 1.0;
 
   const stride = SEGMENTS_U + 1;
 
